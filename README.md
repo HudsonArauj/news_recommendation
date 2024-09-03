@@ -70,7 +70,7 @@ Com o contêiner em execução, você pode acessar a API através do endereço:
 http://10.103.0.28:1515
 ```
 
-## Como Usar a API
+### Como Usar a API
 
 ### Pontos Finais
 
@@ -80,22 +80,29 @@ A API possui os seguintes endpoints:
 
 ### Exemplos de Consultas
 
-Para ajudar a entender o funcionamento da API, você pode acompanhar o arquivo `test_query.py`, que contém exemplos de consultas à API. Abaixo estão três exemplos de testes realizados, cada um com uma consulta diferente:
+Você pode testar a API diretamente através do navegador ou de ferramentas como `curl` ou Postman, utilizando o formato de URL abaixo para cada consulta:
 
 #### 1. Teste 1: `Query = "Elon Musk briga com Alexandre de Moraes"`
 
-Este teste realiza uma consulta sobre um tema específico, envolvendo Elon Musk e Alexandre de Moraes. A API retorna 10 notícias que são consideradas relevantes para essa consulta, baseadas no conteúdo do banco de dados.
+Para testar essa consulta, use o seguinte link:
 
-- **Como testar**: Acesse [http://10.103.0.28:1515/docs#/default/query_route_query_get](http://10.103.0.28:1515/docs#/default/query_route_query_get), clique no botão "Try it out" ao lado do endpoint `/query`, e insira o texto `"Elon Musk briga com Alexandre de Moraes"` no campo `query`. Em seguida, clique em "Execute" para visualizar as 10 notícias mais relevantes.
+[http://10.103.0.28:1515/query?query=Elon%20Musk%20briga%20com%20Alexandre%20de%20Moraes](http://10.103.0.28:1515/query?query=Elon%20Musk%20briga%20com%20Alexandre%20de%20Moraes)
+
+Esse link enviará a consulta `"Elon Musk briga com Alexandre de Moraes"` para a API e retornará 10 notícias relevantes.
 
 #### 2. Teste 2: `Query = "Treino Paralimpíadas"`
 
-Neste teste, a consulta é mais específica, focando em treinamentos para as Paralimpíadas. A API retorna 1 notícia relevante, o que demonstra a capacidade do sistema em identificar e filtrar conteúdos mesmo em consultas com resultados limitados.
+Para testar essa consulta, use o seguinte link:
 
-- **Como testar**: Acesse [http://10.103.0.28:1515/docs#/default/query_route_query_get](http://10.103.0.28:1515/docs#/default/query_route_query_get), clique em "Try it out" no endpoint `/query`, e insira a consulta `"Treino Paralimpíadas"` no campo `query`. Clique em "Execute" para visualizar a notícia relevante.
+[http://10.103.0.28:1515/query?query=treino%20Paralimp%C3%ADadas](http://10.103.0.28:1515/query?query=treino%20Paralimp%C3%ADadas)
+
+Esse link enviará a consulta `"Treino Paralimpíadas"` para a API e retornará 1 notícia relevante.
 
 #### 3. Teste 3: `Query = "crescimento verde"`
 
-Aqui, a consulta envolve o tema de "crescimento verde", um tópico amplamente discutido em contextos econômicos e ambientais. A API retorna novamente 10 notícias relevantes, mostrando sua capacidade de lidar com temas amplos e populares.
+Para testar essa consulta, use o seguinte link:
 
-- **Como testar**: Visite [http://10.103.0.28:1515/docs#/default/query_route_query_get](http://10.103.0.28:1515/docs#/default/query_route_query_get), selecione "Try it out" ao lado do endpoint `/query`, insira `"crescimento verde"` no campo `query`, e clique em "Execute" para receber as 10 notícias relacionadas ao tema.
+[http://10.103.0.28:1515/query?query=crescimento%20verde](http://10.103.0.28:1515/query?query=crescimento%20verde)
+
+Esse link enviará a consulta `"crescimento verde"` para a API e retornará 10 notícias relevantes.
+

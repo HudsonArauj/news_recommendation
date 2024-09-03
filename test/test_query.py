@@ -4,7 +4,7 @@ from main import app
 client = TestClient(app)
 
 def test_query_yields_10_results():
-    response = client.get("/query?query=a fun love story")
+    response = client.get("/query?query=Elon musk briga com alexandre de moraes")
     json_response = response.json()
     
     assert response.status_code == 200
@@ -12,7 +12,7 @@ def test_query_yields_10_results():
     assert json_response["message"] == "OK"
 
 def test_query_yields_few_results():
-    response = client.get("/query?query=zombie apocalypse")
+    response = client.get("/query?query=treino Paralimpíadas")
     json_response = response.json()
     
     assert response.status_code == 200
@@ -20,7 +20,10 @@ def test_query_yields_few_results():
     assert json_response["message"] == "OK"
 
 def test_query_yields_non_obvious_results():
-    response = client.get("/query?query=Many birds migrate long distances")
+    """A relevância aqui pode não ser imediatamente aparente, já que "crescimento verde" pode se referir tanto a políticas 
+    ambientais quanto a iniciativas econômicas sustentáveis. O resultado pode ser não óbvio se ele priorizar notícias sobre
+    economia em vez de ecologia, por exemplo."""
+    response = client.get("/query?query=crescimento verde")
     json_response = response.json()
     
     # TODO: add assert to verify non obvious results

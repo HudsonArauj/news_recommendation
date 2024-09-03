@@ -20,11 +20,11 @@ app = FastAPI()
 def query_route(query: str = Query(..., description="Search query")):
     if not query:
         raise HTTPException(status_code=400, detail="Query cannot be empty")
-    relevant_indices, cosine_similarities = process_query(query, vectorizer, tfidf_matrix)
+    relevant_indices, scores = process_query(query, vectorizer, tfidf_matrix)
     results = []
     for i in relevant_indices[:10]:
-        results.append(QueryResponse(title=df.iloc[i]['titulo'], content=df.iloc[i]['texto'], relevance=cosine_similarities[i]))
-        
+        results.append(QueryResponse(title=df.iloc[i]['titulo'], content=df.iloc[i]['texto'], relevance=scores[i]))
+    print(len(results))    
     return {"results": results, "message": "OK"}
      
 

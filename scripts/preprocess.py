@@ -29,11 +29,13 @@ def process_query(query, vectorizer, tfidf_matrix):
     
     query_tfidf = vectorizer.transform([query])
     
+    # cosine_similarities = cosine_similarity(query_tfidf, tfidf_matrix).flatten()
+    R = tfidf_matrix.dot(query_tfidf.T)
     
-    cosine_similarities = cosine_similarity(query_tfidf, tfidf_matrix).flatten()
+    scores = R.toarray().flatten()
 
-    relevant_indices = cosine_similarities.argsort()[::-1]
-    relevant_indices = [i for i in relevant_indices if cosine_similarities[i] > 0]
+    relevant_indices = scores.argsort()[::-1]
+    relevant_indices = [i for i in relevant_indices if scores[i] > 0]
     
-    return relevant_indices, cosine_similarities
+    return relevant_indices, scores
 

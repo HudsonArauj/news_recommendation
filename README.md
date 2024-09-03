@@ -100,9 +100,12 @@ Esse link enviará a consulta `"Treino Paralimpíadas"` para a API e retornará 
 
 #### 3. Teste 3: `Query = "crescimento verde"`
 
+A relevância aqui pode não ser imediatamente aparente, já que "crescimento verde" pode se referir tanto a políticas ambientais quanto a iniciativas econômicas sustentáveis. O resultado pode ser não óbvio se ele priorizar notícias sobre economia em vez de ecologia, por exemplo.
+
 Para testar essa consulta, use o seguinte link:
 
 [http://10.103.0.28:1515/query?query=crescimento%20verde](http://10.103.0.28:1515/query?query=crescimento%20verde)
 
 Esse link enviará a consulta `"crescimento verde"` para a API e retornará 10 notícias relevantes.
+
 

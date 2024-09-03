@@ -50,14 +50,14 @@ Para construir uma imagem Docker da aplicação, utilize o seguinte comando:
 docker build -t news-rec .
 ```
 
-Esse comando cria uma imagem Docker com o nome `news-rec`, baseada no Dockerfile presente no diretório do projeto.
+Esse comando cria uma imagem Docker com o nome `hudsonma-marcosvs3`, baseada no Dockerfile presente no diretório do projeto.
 
 ### Execução do Container
 
 Após a construção da imagem, você pode executar a aplicação em um contêiner Docker utilizando o comando:
 
 ```bash
-docker run -d -p 1515:1515 news-rec
+docker run -d -p 1515:1515 hudsonma-marcosvs3
 ```
 
 Esse comando inicia o contêiner em segundo plano (`-d`), mapeando a porta `1515` do host para a porta `1515` do contêiner. Isso permite acessar a API em seu ambiente local.
@@ -67,5 +67,5 @@ Esse comando inicia o contêiner em segundo plano (`-d`), mapeando a porta `1515
 Com o contêiner em execução, você pode acessar a API através do endereço:
 
 ```bash
-http://localhost:1515
+http://10.103.0.28:1515
 ```

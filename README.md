@@ -96,7 +96,7 @@ Para testar essa consulta, use o seguinte link:
 
 [http://10.103.0.28:1515/query?query=treino%20Paralimp%C3%ADadas](http://10.103.0.28:1515/query?query=treino%20Paralimp%C3%ADadas)
 
-Esse link enviará a consulta `"Treino Paralimpíadas"` para a API e retornará 1 notícia relevante.
+Esse link enviará a consulta `"Treino Paralimpíadas"` para a API e retornará 3 notícias relevantes.
 
 #### 3. Teste 3: `Query = "crescimento verde"`
 

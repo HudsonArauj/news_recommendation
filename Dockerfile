@@ -1,14 +1,13 @@
-FROM python:3.10-slim
+FROM python:3.9
 
-WORKDIR /app
+WORKDIR /code
 
-COPY requirements.txt /app/
-RUN pip install --no-cache-dir -r requirements.txt
+COPY ./requirements.txt /code/requirements.txt
 
-COPY . /app/
+RUN python -m pip install --upgrade pip
 
-RUN pip install --no-cache-dir pytest && pytest --disable-warnings
-    
-EXPOSE 6599
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "6599"]
+COPY . /code
+
+CMD ["python", "main.py"]

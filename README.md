@@ -1,4 +1,4 @@
-# Atividade Prática Supervisionada: Sistema de Busca
+# Atividade Prática Supervisionada: Sistema de Recomendação
 
 ## Descrição
 
@@ -6,7 +6,7 @@ Este projeto faz parte de uma atividade supervisionada na disciplina de Processa
 
 ## Contexto Geral
 
-Esta API foi desenvolvida com o objetivo de fornecer recomendações de notícias relevantes com base em pesquisas específicas dos usuários. Utilizando como fonte o site brasileiro Poder360, conhecido por sua cobertura detalhada de assuntos políticos e econômicos, o sistema analisa o conteúdo de todas as notícias publicadas nos últimos 15 dias. A partir dessa análise, a API sugere as notícias mais relacionadas à consulta realizada, oferecendo uma ferramenta eficiente para manter os usuários informados sobre temas de interesse.
+Esta API foi desenvolvida com o objetivo de fornecer recomendações de notícias relevantes com base em pesquisas específicas dos usuários. Utilizando como fonte o site brasileiro [Poder360](https://www.poder360.com.br/), conhecido por sua cobertura detalhada de assuntos políticos e econômicos, o sistema analisa o conteúdo de todas as notícias publicadas nos últimos 15 dias. A partir dessa análise, a API sugere as notícias mais relacionadas à consulta realizada, oferecendo uma ferramenta eficiente para manter os usuários informados sobre temas de interesse.
 
 ## Técnicas Utilizadas
 

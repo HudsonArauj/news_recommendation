@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Este projeto é uma atividade supervisionada que envolve a criação de um sistema de recomendação utilizando uma API. O sistema permite realizar consultas e retorna até dez documentos relevantes para a pesquisa, com base em um banco de dados escolhido pelo grupo.
+Este projeto faz parte de uma atividade supervisionada na disciplina de Processamento de Linguagem Natural do Insper. O objetivo é desenvolver um sistema de recomendação que funcione através de uma API.
 
 ## Contexto Geral
 

@@ -4,15 +4,13 @@ import uvicorn
 from scripts.get_data import get_data
 from scripts.preprocess import preprocess,process_query
 from scripts.vectorizer import vectorize_text
-from models.schema import QueryResponse
+from schemas.schema import QueryResponse
 
 df = get_data()
 
 # preprocessamento dos textos
 df['texto'] = df['texto'].apply(preprocess)
 
-# vetorização dos textos
-tfidf_matrix, vectorizer = vectorize_text(df)
 
 app = FastAPI()
 
@@ -20,7 +18,7 @@ app = FastAPI()
 def query_route(query: str = Query(..., description="Search query")):
     if not query:
         raise HTTPException(status_code=400, detail="Query cannot be empty")
-    relevant_indices, scores = process_query(query, vectorizer, tfidf_matrix)
+    relevant_indices, scores = process_query(query)
     results = []
     for i in relevant_indices[:10]:
         results.append(QueryResponse(title=df.iloc[i]['titulo'], content=df.iloc[i]['texto'], relevance=scores[i]))

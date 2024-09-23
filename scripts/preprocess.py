@@ -1,5 +1,5 @@
 import re
-from sklearn.metrics.pairwise import cosine_similarity
+import joblib
 
 def preprocess(text):
     # Verifica se a entrada é uma string, caso contrário, retorna uma string vazia
@@ -21,20 +21,23 @@ def preprocess(text):
     
     return text
 
-
-def process_query(query, vectorizer, tfidf_matrix):
+import os
+def process_query(query):
     
     query = preprocess(query)
     
+    vectorizer_path = os.path.abspath('./models/vectorizer.joblib')
+    vectorizer = joblib.load(vectorizer_path)
     
     query_tfidf = vectorizer.transform([query])
-    
-    # cosine_similarities = cosine_similarity(query_tfidf, tfidf_matrix).flatten()
+    tfidf_matrix_path = os.path.abspath('./models/tfidf_matrix.joblib')
+    tfidf_matrix = joblib.load(tfidf_matrix_path)
     R = tfidf_matrix.dot(query_tfidf.T)
     
     scores = R.toarray().flatten()
-
+    
     relevant_indices = scores.argsort()[::-1]
+    
     relevant_indices = [i for i in relevant_indices if scores[i] > 0]
     
     return relevant_indices, scores
